@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Blazorise.Charts.1.0.1\build\Blazorise.Charts.props" Condition="Exists('..\packages\Blazorise.Charts.1.0.1\build\Blazorise.Charts.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE6F26BF-A9AA-474C-A1A5-86E818788DB1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Patient_Record</RootNamespace>
+    <AssemblyName>Patient Record</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbConnect.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Clinic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Clinic.Designer.cs">
+      <DependentUpon>Clinic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Patient_visits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Patient_visits.Designer.cs">
+      <DependentUpon>Patient_visits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Visit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Visit.Designer.cs">
+      <DependentUpon>Visit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dashboards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Dashboards.Designer.cs">
+      <DependentUpon>Dashboards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Doctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Doctors.Designer.cs">
+      <DependentUpon>Doctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Patients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Patients.Designer.cs">
+      <DependentUpon>Patients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Visits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Visits.Designer.cs">
+      <DependentUpon>Visits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Auth\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Clinic.resx">
+      <DependentUpon>Clinic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Patient_visits.resx">
+      <DependentUpon>Patient_visits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Visit.resx">
+      <DependentUpon>Visit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Dashboards.resx">
+      <DependentUpon>Dashboards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Doctors.resx">
+      <DependentUpon>Doctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Patients.resx">
+      <DependentUpon>Patients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Visits.resx">
+      <DependentUpon>Visits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\revenus.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\stethoscope_120px.png" />
+    <None Include="Images\clinic_120px.png" />
+    <None Include="Images\businessman_120px.png" />
+    <None Include="Images\eye_20px.png" />
+    <None Include="Images\hide_20px.png" />
+    <Content Include="Images\add_20px.png" />
+    <Content Include="Images\available_updates_20px.png" />
+    <Content Include="Images\clinic_20px.png" />
+    <Content Include="Images\dashboard_20px.png" />
+    <Content Include="Images\delete_20px.png" />
+    <Content Include="Images\doctors_bag_20px.png" />
+    <Content Include="Images\edit_20px.png" />
+    <Content Include="Images\email_sign_20px.png" />
+    <Content Include="Images\handicapped_20px.png" />
+    <Content Include="Images\health_checkup_20px.png" />
+    <Content Include="Images\health_checkup_20px1.png" />
+    <Content Include="Images\health_checkup_21px.png" />
+    <Content Include="Images\icons8_clinic.ico" />
+    <Content Include="Images\icons8_clinic_16.png" />
+    <Content Include="Images\icons8_clinic_32.png" />
+    <Content Include="Images\icons8_doctors_bag.ico" />
+    <Content Include="Images\icons8_doctors_bag_16.png" />
+    <Content Include="Images\icons8_doctors_bag_32.png" />
+    <Content Include="Images\icons8_handicapped.ico" />
+    <Content Include="Images\icons8_handicapped1.ico" />
+    <Content Include="Images\icons8_handicapped1_16.png" />
+    <Content Include="Images\icons8_handicapped1_32.png" />
+    <Content Include="Images\icons8_handicapped_16.png" />
+    <Content Include="Images\icons8_user.ico" />
+    <Content Include="Images\icons8_user_16.png" />
+    <Content Include="Images\icons8_user_32.png" />
+    <Content Include="Images\icons8_visit.ico" />
+    <Content Include="Images\icons8_visit_16.png" />
+    <Content Include="Images\icons8_visit_32.png" />
+    <Content Include="Images\Logout_20px.png" />
+    <Content Include="Images\Mdemy Medical.png" />
+    <Content Include="Images\name_20px.png" />
+    <Content Include="Images\password_20px.png" />
+    <Content Include="Images\physiotherapy_100px.png" />
+    <Content Include="Images\plus_math_100px.png" />
+    <Content Include="Images\profile_20px.png" />
+    <Content Include="Images\search_20px.png" />
+    <Content Include="Images\stethoscope_20px.png" />
+    <Content Include="Images\stethoscope_50p.png" />
+    <Content Include="Images\stethoscope_50px.png" />
+    <Content Include="Images\trash_can_20px.png" />
+    <Content Include="Images\upload_20px.png" />
+    <Content Include="Images\upward_arrow_20px.png" />
+    <Content Include="Images\user_20px.png" />
+    <Content Include="Images\visit_20px.png" />
+    <Content Include="Images\waste_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Blazorise.Charts.1.0.1\build\Blazorise.Charts.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Blazorise.Charts.1.0.1\build\Blazorise.Charts.props'))" />
+  </Target>
+</Project>
